@@ -1,0 +1,8 @@
+2018-04-14 14:30:01,620 [INFO ][org.jppf.utils.FileUtils.initJPPFTempDir(547)]: JPPF temp folder C:\Users\Usuario\AppData\Local\Temp\.jppf
+2018-04-14 14:30:01,693 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(79)]: --------------------------------------------------------------------------------
+2018-04-14 14:30:01,693 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: JPPF Version: 5.2.9, Build number: 1912, Build date: 2018-04-02 11:00 CEST
+2018-04-14 14:30:01,693 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: starting node with PID=2640, UUID=477F9D0A-63FB-4E7F-2F0B-E82BC8CB0730
+2018-04-14 14:30:01,693 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: --------------------------------------------------------------------------------
+2018-04-14 14:30:03,294 [INFO ][org.jppf.classloader.ClassLoaderRequestHandler.run(156)]: maxBatchSize = 1
+2018-04-14 14:30:03,336 [INFO ][org.jppf.execute.AbstractExecutionManager.<init>(111)]: running 8 processing threads
+2018-04-14 14:30:03,336 [INFO ][org.jppf.execute.AbstractExecutionManager.createThreadManager(137)]: Using default thread manager

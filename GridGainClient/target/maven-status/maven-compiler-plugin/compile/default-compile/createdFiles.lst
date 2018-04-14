@@ -1,0 +1,7 @@
+es\grid\client\service\SudokuService.class
+es\grid\client\service\SudokuServiceImpl.class
+es\grid\client\bean\BWrapper.class
+es\grid\client\config\GridGainClusterConfig.class
+es\grid\client\controller\SudokuController.class
+es\grid\client\Application.class
+es\grid\client\service\SudokuServiceImpl$1.class

@@ -1,0 +1,6 @@
+2018-04-14 14:29:40,715 [INFO ][org.jppf.utils.FileUtils.initJPPFTempDir(547)]: JPPF temp folder C:\Users\Usuario\AppData\Local\Temp\.jppf
+2018-04-14 14:29:40,792 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(79)]: --------------------------------------------------------------------------------
+2018-04-14 14:29:40,792 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: JPPF Version: 5.2.9, Build number: 1912, Build date: 2018-04-02 11:00 CEST
+2018-04-14 14:29:40,793 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: starting driver with PID=12248, UUID=4EF07852-8B4C-6458-B59D-1023830049A7
+2018-04-14 14:29:40,793 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: --------------------------------------------------------------------------------
+2018-04-14 14:29:44,562 [INFO ][org.jppf.nio.NioConstants.getCheckConnection(81)]: NIO checks are enabled

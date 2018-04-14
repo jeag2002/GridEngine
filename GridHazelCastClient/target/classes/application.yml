@@ -1,0 +1,7 @@
+server:
+   port: 8080
+   
+cluster:
+  number: 1
+  ip_1: 127.0.0.1
+  port_1: 5701

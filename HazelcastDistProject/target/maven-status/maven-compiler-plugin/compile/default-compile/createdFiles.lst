@@ -1,0 +1,7 @@
+com\hazelcast\examples\Java8RunnableAdapter.class
+com\hazelcast\examples\EntryProcessorExample.class
+com\hazelcast\examples\Template.class
+com\hazelcast\examples\Java8EntryProcessor.class
+com\hazelcast\examples\Java8Runnable.class
+com\hazelcast\examples\ExecutorServiceExample.class
+com\hazelcast\examples\Java8EntryProcessorAdapter.class
