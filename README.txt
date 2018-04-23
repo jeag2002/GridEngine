@@ -13,11 +13,14 @@ JPPF 5.2.9 (Compute grid)
 
 PROJECTS:
 
-GridGainClient: REST Interface; GridGain TaskManager
-GridGainServer1: GridGain Task Node
-GridHazelCastClient: REST Interface; Hazelcast Cache/TaskManager
-HazelCastServer1:  HazelCast Task Node
-HazelcastDistProject: TaskManager+Task node all-in-one project
-JPPFDriver: JPPF Grid Architecture Launcher (run with ant)
-JPPFNode: JPPF Grid Node Launcher (run with ant)
-JPPFTask: JPPF TaskManager/Task impl. (run with ant)
+GridGainClient:                  REST Interface; GridGain TaskManager
+GridGainServer1:                 GridGain Task Node
+GridHazelCastClient:             REST Interface; Hazelcast Cache/TaskManager
+HazelCastServer1:                HazelCast Task Node
+HazelcastDistProject:            TaskManager+Task node all-in-one project
+JPPFDriver:                      JPPF Grid Architecture Launcher (run with ant)
+JPPFNode:                        JPPF Grid Node Launcher (run with ant)
+JPPFTask:                        JPPF TaskManager/Task impl. (run with ant)
+HazelcastDistExecutor:           HazelCast taskmanager executorService
+HazelCastServerExecutorServer1:  HazelCast task client 
+HazelCastServerExecutorServer2:  HazelCast task client
