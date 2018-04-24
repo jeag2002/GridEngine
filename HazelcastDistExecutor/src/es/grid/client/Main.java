@@ -1,11 +1,13 @@
 package es.grid.client;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Future;
 
-import com.hazelcast.com.eclipsesource.json.JsonObject.Member;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.ExecutorConfig;
 import com.hazelcast.core.Hazelcast;
@@ -13,11 +15,14 @@ import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IExecutorService;
 import com.hazelcast.core.IMap;
 import com.hazelcast.core.IQueue;
+import com.hazelcast.core.Member;
 
 import es.grid.client.bean.BWrapper;
 import es.grid.client.task.DistTask;
 
 public class Main {
+	
+	private static final String THIS = "this";
 
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
@@ -43,19 +48,41 @@ public class Main {
 		dt.setHazelcastInstance(hazelcastInstance);
 		nodes.set("data",bw);
 		
+		
+		//Execute task parallel to ALL MEMBERS
+		/////////////////////////////////////////////////////////////////////////////////////
 		IExecutorService executorService = hazelcastInstance.getExecutorService("exec");
-		Map<com.hazelcast.core.Member, Future<String>> futures = executorService.submitToAllMembers(dt);
+		Map<Member, Future<String>> futures = executorService.submitToAllMembers(dt);
+		/////////////////////////////////////////////////////////////////////////////////////
+		
+		//Execute task in parallel to SELECTED MEMBERS (in this case, to all node except main node)
+		///////////////////////////////////////////////////////////////////////////////////////
+		/*
+		Set<Member> all = hazelcastInstance.getCluster().getMembers();
+		List<Member> named = new ArrayList<Member>(all.size());
+		
+		for (Member member: all) {
+			System.out.println("Member of cluster [" + member.toString() + "]");
+			String memberStr = member.toString();
+			if (memberStr.trim().indexOf(THIS)==-1){
+				named.add(member);
+			}
+		}
+		Map<Member, Future<String>> futures = executorService.submitToMembers(dt, named);
+		*/
+		///////////////////////////////////////////////////////////////////////////////////////
 		
 		String result = null;	
 		String result_1 = "";
 		
-		//while(true){
+		
 			
 			
 		Collection<Future<String>> data = futures.values();
 		Iterator<Future<String>> it = data.iterator();
 			
-		while(it.hasNext()){
+		
+		while(true){
 				
 				bw = queue.poll();
 				
@@ -63,12 +90,14 @@ public class Main {
 					System.out.println("[MAIN] bw-pollQ (" +bw.toString()+ ")");
 				}
 				
+				while(it.hasNext()){
 				
-				result = it.next().get();
-				if (result != null){
-					if (!result_1.equalsIgnoreCase(result)){
-						System.out.println("[MAIN] result " + result);
-						result_1 = result;
+					result = it.next().get();
+					if (result != null){
+						if (!result_1.equalsIgnoreCase(result)){
+							System.out.println("[MAIN] result " + result);
+							result_1 = result;
+						}
 					}
 				}
 		}
